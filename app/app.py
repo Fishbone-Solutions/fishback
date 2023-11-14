@@ -7,23 +7,11 @@ from app.configs import email_list
 app = Flask(__name__)
 CORS(app)
 
-
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
-app.config["JWT_ALGORITHM"] = "HS256"
-
-app.config["JWT_ALGORITHM"] = "HS256"
-app.config["SECRET_KEY"] = "IUGYGFYR456547E47636RDNGTXSDR"
-
-
-@app.route("/login", methods=["POST"])
-def login():
-    print("hello")
-
 
 @app.errorhandler(404)
 def error_404(e):
     return '<h1>Bad Request</h1>', 404
-
 
 @app.route('/stack_addition', methods=['POST'])
 def handle_addtion():
